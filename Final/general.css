@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Playfair Display", serif;
+}
+
+body {
+  /* COLORS */
+  --main-bg-color: #c4d7f2;
+  --heading-1-color: #161616;
+}
+
+h1,
+h2,
+p {
+  color: var(--heading-1-color);
+}
+
+p {
+  font-weight: 500;
+}
+
+button {
+  width: 9rem;
+  height: 4rem;
+  background-color: var(--heading-1-color);
+  color: var(--main-bg-color);
+  cursor: pointer;
+  border-radius: 0.6rem;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+/* MAIN HEADING END */

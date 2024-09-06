@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="custom.css" />
+    <link rel="stylesheet" href="queries.css" />
+    <script defer type="module" src="script.js"></script>
+
+    <title>Array Methods</title>
+  </head>
+  <body>
+    <section class="section-main">
+      <div class="main-heading">
+        <h1>Array Methods</h1>
+      </div>
+      <!-- MAIN HEADING END -->
+      <div class="array-def-container">
+        <h2>Array Definition</h2>
+        <p class="para-padding">
+          The Array object, as with arrays in other programming languages,
+          enables storing a collection of multiple items under a single variable
+          name, and has members for performing common array operations.
+        </p>
+      </div>
+      <!-- ARRAY DEFINITION ENDING -->
+      <div class="map-method-container">
+        <h3>Map Method</h3>
+        <p class="para-padding">
+          The map() method of Array instances creates a new array populated with
+          the results of calling a provided function on every element in the
+          calling array.
+        </p>
+        <form action="" class="map-form">
+          <div class="input-array">
+            <input type="text" value="5" id="map-input-1" />
+            <input type="text" value="4" id="map-input-2" />
+            <input type="text" value="6" id="map-input-3" />
+          </div>
+          <button class="submit-map-btn">Map</button>
+          <div class="output-array">
+            <p>💎<span class="map-span-comma">,</span></p>
+            <p>📀<span class="map-span-comma">,</span></p>
+            <p>💍<span class="map-span-comma">,</span></p>
+          </div>
+        </form>
+      </div>
+      <!-- MAP METHOD ENDING -->
+      <div class="side-note">
+        <p>
+          🌟map() creates a new array from calling a function for every array
+          element.
+        </p>
+      </div>
+      <!-- SIDE NOTE ENDING FOR MAP -->
+      <div class="filter-method-container">
+        <h3>Filter Method</h3>
+        <div class="countries-container">
+          <div class="all-countries-container">
+            <!-- ASIAN COUNTRIES -->
+            <p>India</p>
+            <p>Japan</p>
+            <p>Thailand</p>
+            <p>Singapore</p>
+            <p>Georgia</p>
+            <!-- AMERICAN COUNTRIES -->
+            <p>Peru</p>
+            <p>Mexico</p>
+            <p>Colombia</p>
+            <p>Chile</p>
+            <p>Brazil</p>
+            <!-- EUROPEAN COUNTRIES -->
+            <p>Russia</p>
+            <p>United Kingdom</p>
+            <p>Germany</p>
+            <p>Spain</p>
+            <p>Italy</p>
+            <!-- Australian COUNTRIES-->
+            <p>Australia</p>
+            <p>New Zealand</p>
+            <p>Cocos</p>
+            <p>Fiji</p>
+            <p>Kiribati</p>
+            <!-- African COUNTRIES-->
+            <p>Egypt</p>
+            <p>Kenya</p>
+            <p>Mali</p>
+            <p>Angola</p>
+            <p>Uganda</p>
+          </div>
+          <!-- buttons container -->
+          <div class="filter-buttons-container">
+            <button class="filter-btn" data-filter-btn="Asia">Asia</button>
+            <button class="filter-btn" data-filter-btn="America">
+              America
+            </button>
+            <button class="filter-btn" data-filter-btn="Africa">Africa</button>
+            <button class="filter-btn" data-filter-btn="Europe">Europe</button>
+            <button class="filter-btn" data-filter-btn="Australia">
+              Australia
+            </button>
+          </div>
+          <!-- FILTERED COUNTRIES CONTAINER -->
+          <div class="filtered-countries-container">
+            <!-- ASIAN COUNTRIES -->
+            <p>India</p>
+            <p>Japan</p>
+            <p>Thailand</p>
+            <p>Singapore</p>
+            <p>Georgia</p>
+          </div>
+        </div>
+      </div>
+      <!-- FILTER METHOD ENDING -->
+      <div class="side-note">
+        <p>🌟The filter() method does not change the original array.</p>
+      </div>
+      <!-- SIDE NOTE ENDING FOR FILTER -->
+    </section>
+  </body>
+</html>
