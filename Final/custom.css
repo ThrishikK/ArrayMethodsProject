@@ -90,6 +90,21 @@ input {
 
 /* SIDE NOTE ENDING */
 
+.separator {
+  margin: 2rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.separator-blank {
+  border-radius: 1rem;
+  width: 1%;
+  height: 0.8rem;
+  background-color: rgba(29, 59, 102, 0.397);
+}
+/* SEPARATOR END */
+
 .filter-method-container {
   margin-top: 2rem;
 }
