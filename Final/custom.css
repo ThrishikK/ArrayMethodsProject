@@ -181,3 +181,30 @@ input {
 }
 
 /* FILTER METHOD ENDING */
+
+.push-pop-method {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.push-pop-array {
+  border-left: 0.3rem solid #161616;
+  border-right: 0.3rem solid #161616;
+
+  padding: 0 0.5rem;
+  border-radius: 1rem;
+
+  /*  */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gen-label-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* PUSH POP METHOD ENDing */

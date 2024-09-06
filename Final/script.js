@@ -1,4 +1,4 @@
-import { ouputArrayMarkup, filterMarkup } from "./markup.js";
+import { ouputArrayMarkup, filterMarkup, pushPopMarkup } from "./markup.js";
 
 // INITIALIZATIONS
 const mapForm = document.querySelector(".map-form");
@@ -10,7 +10,10 @@ const filterButtonsContainer = document.querySelector(
 const filteredCountriesContainer = document.querySelector(
   ".filtered-countries-container"
 );
+const rightArray = document.querySelector(".right-array");
+const leftArray = document.querySelector(".left-array");
 
+const pushPopBtn = document.querySelector("#push-btn");
 // MAPPING FUNCTION
 function mapArrayElements() {
   const mapInput1 = document.querySelector("#map-input-1").value;
@@ -71,8 +74,75 @@ filterButtonsContainer.addEventListener("click", function (e) {
   }
 });
 
+// PUSH AND POP METHOD
+const genLabelObject = [
+  { genTitle: "The Silent Generation", genRange: "Born: 1928–1945" },
+  { genTitle: "Baby Boomers", genRange: "Born: 1946–1964" },
+  { genTitle: "Generation X (Gen X)", genRange: "Born: 1965–1980" },
+  { genTitle: "Millennials (Gen Y)", genRange: "Born: 1981–1996" },
+  { genTitle: "Generation Z (Gen Z)", genRange: "Born: 1997–2012" },
+  { genTitle: "Generation Alpha", genRange: "Born: 2013–2025 (projected)" },
+];
+
+let separatorIndex = 0;
+let genLabObjLen = genLabelObject.length;
+
+function firstGenLabelRun() {
+  genLabelObject.forEach(({ genTitle, genRange }) => {
+    const result = pushPopMarkup(genTitle, genRange);
+    rightArray.insertAdjacentHTML("beforeend", result);
+  });
+}
+
+function addingPushPopMarkup(index) {
+  const leftArrayObj = genLabelObject.slice(0, index);
+  const rightArrayObj = genLabelObject.slice(index, genLabObjLen);
+  leftArrayObj.forEach(({ genTitle, genRange }) => {
+    const result = pushPopMarkup(genTitle, genRange);
+    leftArray.insertAdjacentHTML("beforeend", result);
+  });
+  rightArrayObj.forEach(({ genTitle, genRange }) => {
+    const result = pushPopMarkup(genTitle, genRange);
+    rightArray.insertAdjacentHTML("beforeend", result);
+  });
+}
+
+function clearPushPopMarkup() {
+  leftArray.innerHTML = "";
+  rightArray.innerHTML = "";
+}
+
+function pushAndPop() {
+  let pushPopBtnAttr = pushPopBtn.dataset.pushPop;
+  clearPushPopMarkup();
+  if (pushPopBtnAttr === "push") {
+    if (separatorIndex < genLabObjLen) {
+      separatorIndex += 1;
+      addingPushPopMarkup(separatorIndex);
+    } else {
+      pushPopBtn.setAttribute("data-push-pop", "pop");
+      separatorIndex -= 1;
+      pushPopBtn.textContent = "Pop";
+      addingPushPopMarkup(separatorIndex);
+    }
+  } else {
+    if (separatorIndex !== 0) {
+      separatorIndex -= 1;
+      addingPushPopMarkup(separatorIndex);
+    } else {
+      pushPopBtn.setAttribute("data-push-pop", "push");
+      separatorIndex += 1;
+      pushPopBtn.textContent = "Push";
+      addingPushPopMarkup(separatorIndex);
+    }
+  }
+}
+
+pushPopBtn.addEventListener("click", pushAndPop);
+
 // INITIAL RENDERING
 // MAPPING
 mapArrayElements();
 filterBtnStyles("Asia");
 filterCountries("Asia");
+firstGenLabelRun();

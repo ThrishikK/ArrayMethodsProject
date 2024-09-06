@@ -24,4 +24,12 @@ function filterMarkup(continent) {
   `;
 }
 
-export { ouputArrayMarkup, filterMarkup };
+// PUSH POP MARKUP
+function pushPopMarkup(label, range) {
+  return `<div class="gen-label-container">
+              <p>${label}</p>
+              <p>${range} <span>,</span></p>
+            </div>`;
+}
+
+export { ouputArrayMarkup, filterMarkup, pushPopMarkup };
