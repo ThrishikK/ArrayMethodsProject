@@ -4,6 +4,7 @@ import {
   pushPopMarkup,
   shiftArrayMarkup,
   unshiftArrayMarkup,
+  reduceMarkup,
 } from "./markup.js";
 
 // INITIALIZATIONS
@@ -27,6 +28,11 @@ const unshiftArrayContainer = document.querySelector(
   ".unshift-array-container"
 );
 const unshiftBtn = document.querySelector("#unshift-btn");
+const reduceOutputContainer = document.querySelector(
+  ".reduce-output-container"
+);
+
+const reduceSelect = document.querySelector("#reduce-select");
 // MAPPING FUNCTION
 function mapArrayElements() {
   const mapInput1 = document.querySelector("#map-input-1").value;
@@ -205,6 +211,21 @@ function addingElemntUnshiftArr() {
 
 unshiftBtn.addEventListener("click", addingElemntUnshiftArr);
 
+// reduce method
+const reduceArray = [9, 18, 27, 36, 45];
+
+function reducingArrayFun(value) {
+  reduceOutputContainer.innerHTML = "";
+  reduceOutputContainer.insertAdjacentHTML(
+    "beforeend",
+    reduceMarkup(reduceArray, value)
+  );
+}
+
+reduceSelect.addEventListener("change", function (e) {
+  reducingArrayFun(e.target.value);
+});
+
 // INITIAL RENDERING
 // MAPPING
 mapArrayElements();
@@ -212,3 +233,4 @@ filterBtnStyles("Asia");
 filterCountries("Asia");
 firstGenLabelRun();
 unshiftArrayLoop();
+reducingArrayFun("Add");
