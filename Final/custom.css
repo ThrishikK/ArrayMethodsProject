@@ -207,4 +207,45 @@ input {
   align-items: center;
 }
 
+.gen-label-text {
+  font-weight: 800;
+}
+
 /* PUSH POP METHOD ENDing */
+
+.shift-unshift-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.shift-container {
+  display: flex;
+  flex-direction: column;
+  /*  */
+}
+
+.shift-array-container {
+  border-left: 0.3rem solid #161616;
+  border-right: 0.3rem solid #161616;
+  padding: 0 0.5rem;
+  border-radius: 1rem;
+  margin: 2.5rem 0;
+
+  /*  */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#shift-btn {
+  align-self: flex-end;
+}
+
+#shift-span {
+  border-bottom: 0.3rem solid #161616;
+  margin-left: 2rem;
+}
+
+/* SHIFT AND UNSHIFT METHODS END */

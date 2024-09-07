@@ -60,6 +60,15 @@
   }
 
   /* MAP METHOD ENDING*/
+
+  .shift-container {
+    gap: 1rem;
+  }
+  #shift-span {
+    margin-left: 2rem;
+  }
+
+  /* SHIFT AND UNSHIFT METHODS END */
 }
 
 /* UNDER 900PX Tabs */
@@ -97,6 +106,14 @@
     gap: 1rem;
   }
   /* PUSH POP METHOD ENDing */
+  .shift-container {
+    gap: 0.75rem;
+  }
+  #shift-span {
+    margin-left: 1rem;
+  }
+
+  /* SHIFT AND UNSHIFT METHODS END */
 }
 
 /* UNDER 600PX MOBILES */

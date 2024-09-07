@@ -1,4 +1,9 @@
-import { ouputArrayMarkup, filterMarkup, pushPopMarkup } from "./markup.js";
+import {
+  ouputArrayMarkup,
+  filterMarkup,
+  pushPopMarkup,
+  shiftArrayMarkup,
+} from "./markup.js";
 
 // INITIALIZATIONS
 const mapForm = document.querySelector(".map-form");
@@ -14,6 +19,9 @@ const rightArray = document.querySelector(".right-array");
 const leftArray = document.querySelector(".left-array");
 
 const pushPopBtn = document.querySelector("#push-btn");
+const shiftBtn = document.querySelector("#shift-btn");
+const shiftArrayContainer = document.querySelector(".shift-array-container");
+const shiftSpan = document.querySelector("#shift-span");
 // MAPPING FUNCTION
 function mapArrayElements() {
   const mapInput1 = document.querySelector("#map-input-1").value;
@@ -139,6 +147,33 @@ function pushAndPop() {
 }
 
 pushPopBtn.addEventListener("click", pushAndPop);
+
+// SHIFT AND UNSHIFT METHODS
+const shiftArrayItems = [
+  "Cerebrum,",
+  "Cerebellum,",
+  "Brain stem,",
+  "Amygdala,",
+  "Thalamus,",
+  "Occipital lobe,",
+  "Temporal lobe,",
+];
+
+shiftBtn.addEventListener("click", () => {
+  shiftArrayContainer.innerHTML = "";
+  const shiftedElemet = shiftArrayItems.shift();
+  shiftSpan.textContent = shiftedElemet;
+  if (shiftArrayItems.length > 0) {
+    const result = shiftArrayMarkup(shiftArrayItems);
+    shiftArrayContainer.insertAdjacentHTML("beforeend", result);
+  } else {
+    shiftArrayContainer.insertAdjacentHTML(
+      "beforeend",
+      "<p>Array is Empty</p>"
+    );
+    shiftSpan.textContent = "[-----]";
+  }
+});
 
 // INITIAL RENDERING
 // MAPPING

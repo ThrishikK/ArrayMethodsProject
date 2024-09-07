@@ -27,9 +27,18 @@ function filterMarkup(continent) {
 // PUSH POP MARKUP
 function pushPopMarkup(label, range) {
   return `<div class="gen-label-container">
-              <p>${label}</p>
+              <p class='gen-label-text'>${label}</p>
               <p>${range} <span>,</span></p>
             </div>`;
 }
 
-export { ouputArrayMarkup, filterMarkup, pushPopMarkup };
+// SHIFT ARRAY MARKUP
+function shiftArrayMarkup(array) {
+  let result = "";
+  array.forEach((element) => {
+    result += `<p>${element}</p>`;
+  });
+  return result;
+}
+
+export { ouputArrayMarkup, filterMarkup, pushPopMarkup, shiftArrayMarkup };
