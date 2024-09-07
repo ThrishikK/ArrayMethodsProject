@@ -225,6 +225,10 @@ input {
   /*  */
 }
 
+.para-mar-top {
+  margin-top: 1rem;
+}
+
 .shift-array-container {
   border-left: 0.3rem solid #161616;
   border-right: 0.3rem solid #161616;
@@ -239,6 +243,11 @@ input {
   gap: 0.5rem;
 }
 
+.shift-array-container p,
+span {
+  font-weight: 700;
+}
+
 #shift-btn {
   align-self: flex-end;
 }
@@ -246,6 +255,40 @@ input {
 #shift-span {
   border-bottom: 0.3rem solid #161616;
   margin-left: 2rem;
+}
+
+.unshift-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  gap: 1rem;
+}
+
+.unshift-array-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  row-gap: 1rem;
+}
+
+.unshift-grid-element {
+  border: 0.3rem solid #161616;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.unshit-array-input-container {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.unshit-array-input {
+  width: 50rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  font-family: inherit;
 }
 
 /* SHIFT AND UNSHIFT METHODS END */

@@ -3,6 +3,7 @@ import {
   filterMarkup,
   pushPopMarkup,
   shiftArrayMarkup,
+  unshiftArrayMarkup,
 } from "./markup.js";
 
 // INITIALIZATIONS
@@ -22,6 +23,10 @@ const pushPopBtn = document.querySelector("#push-btn");
 const shiftBtn = document.querySelector("#shift-btn");
 const shiftArrayContainer = document.querySelector(".shift-array-container");
 const shiftSpan = document.querySelector("#shift-span");
+const unshiftArrayContainer = document.querySelector(
+  ".unshift-array-container"
+);
+const unshiftBtn = document.querySelector("#unshift-btn");
 // MAPPING FUNCTION
 function mapArrayElements() {
   const mapInput1 = document.querySelector("#map-input-1").value;
@@ -149,6 +154,7 @@ function pushAndPop() {
 pushPopBtn.addEventListener("click", pushAndPop);
 
 // SHIFT AND UNSHIFT METHODS
+// SHIFT METHOD
 const shiftArrayItems = [
   "Cerebrum,",
   "Cerebellum,",
@@ -174,6 +180,30 @@ shiftBtn.addEventListener("click", () => {
     shiftSpan.textContent = "[-----]";
   }
 });
+// UNSHIFT METHOD
+const unshiftArray = ["Amaravathi", "Chennai", "Banglore", "Dispur", "Delhi"];
+
+function unshiftArrayLoop() {
+  unshiftArrayContainer.insertAdjacentHTML(
+    "beforeend",
+    unshiftArrayMarkup(unshiftArray)
+  );
+}
+
+function addingElemntUnshiftArr() {
+  const inputElement = document.querySelector(".unshit-array-input");
+  const inputVal = inputElement.value;
+  if (Number(inputVal) === 0) {
+    alert("Plaease ENter Valid Unshift Value");
+  } else {
+    unshiftArray.unshift(inputVal);
+    unshiftArrayContainer.innerHTML = "";
+    inputElement.value = "";
+    unshiftArrayLoop();
+  }
+}
+
+unshiftBtn.addEventListener("click", addingElemntUnshiftArr);
 
 // INITIAL RENDERING
 // MAPPING
@@ -181,3 +211,4 @@ mapArrayElements();
 filterBtnStyles("Asia");
 filterCountries("Asia");
 firstGenLabelRun();
+unshiftArrayLoop();

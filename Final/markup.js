@@ -41,4 +41,19 @@ function shiftArrayMarkup(array) {
   return result;
 }
 
-export { ouputArrayMarkup, filterMarkup, pushPopMarkup, shiftArrayMarkup };
+// UNSHIFT ARRAY MARKUP
+function unshiftArrayMarkup(array) {
+  let result = "";
+  array.forEach((element) => {
+    result += `<p class="unshift-grid-element">${element}</p>`;
+  });
+  return result;
+}
+
+export {
+  ouputArrayMarkup,
+  filterMarkup,
+  pushPopMarkup,
+  shiftArrayMarkup,
+  unshiftArrayMarkup,
+};
