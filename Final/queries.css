@@ -40,6 +40,10 @@
     gap: 1.5rem;
   }
   /* PUSH POP METHOD ENDing */
+  .reduce-container {
+    grid-template-columns: 1fr 2fr;
+  }
+
   label {
     font-size: 2rem;
   }
@@ -172,6 +176,10 @@
   /* MAP METHOD ENDING*/
 
   /* SHIFT AND UNSHIFT METHODS END */
+  .reduce-container {
+    grid-template-columns: 1fr;
+  }
+
   label {
     font-size: 1.6rem;
   }

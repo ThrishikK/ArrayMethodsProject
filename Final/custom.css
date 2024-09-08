@@ -310,6 +310,9 @@ span {
 
 .reduce-container {
   display: grid;
+}
+
+.reduce-container {
   grid-template-columns: 1fr 2fr;
 }
 
