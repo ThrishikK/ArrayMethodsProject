@@ -3,6 +3,10 @@
   h1 {
     font-size: 3.2rem;
   }
+
+  .hamburger-menu {
+    display: none;
+  }
   /* MAIN HEADING END */
 
   .array-def-container {
@@ -97,6 +101,22 @@
   h1 {
     font-size: 2.4rem;
   }
+
+  .hamburger-icon {
+    display: block;
+    justify-self: end;
+  }
+
+  .methods-links-container {
+    /* flex-direction: column; */
+    /* align-items: center; */
+    gap: 0.5rem;
+  }
+
+  .methods-links-container {
+    display: none;
+  }
+
   /* MAIN HEADING END */
   .array-def-container {
     gap: 1.6rem;
@@ -156,6 +176,7 @@
   h1 {
     font-size: 2rem;
   }
+
   /* MAIN HEADING END */
   .array-def-container {
     gap: 1.2rem;

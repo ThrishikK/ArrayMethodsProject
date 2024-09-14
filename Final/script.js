@@ -33,6 +33,10 @@ const reduceOutputContainer = document.querySelector(
 );
 
 const reduceSelect = document.querySelector("#reduce-select");
+const hamburgerIcon = document.querySelector(".hamburger-icon");
+const methodsLinksContainer = document.querySelector(
+  ".methods-links-container"
+);
 // MAPPING FUNCTION
 function mapArrayElements() {
   const mapInput1 = document.querySelector("#map-input-1").value;
@@ -225,6 +229,26 @@ function reducingArrayFun(value) {
 reduceSelect.addEventListener("change", function (e) {
   reducingArrayFun(e.target.value);
 });
+
+// HAMBURGER TOGGLING
+function toggleHamburger() {
+  // hamburgerIcon.style.display = "none";
+  if (
+    methodsLinksContainer.classList.contains(
+      "methods-links-container-reappeared"
+    )
+  ) {
+    methodsLinksContainer.style.display = "none";
+    methodsLinksContainer.classList.remove(
+      "methods-links-container-reappeared"
+    );
+  } else {
+    methodsLinksContainer.style.display = "flex";
+    methodsLinksContainer.classList.add("methods-links-container-reappeared");
+  }
+}
+
+hamburgerIcon.addEventListener("click", toggleHamburger);
 
 // INITIAL RENDERING
 // MAPPING

@@ -9,9 +9,36 @@ body {
   padding: 1rem 2rem;
 }
 
+.nav-bar-container {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .main-heading {
+}
+
+.methods-links-container {
+  list-style-type: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.methods-links-container-reappeared {
+  display: flex;
+}
+
+li {
+  font-size: 2rem;
+  cursor: pointer;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hamburger-icon {
+  display: none;
 }
 
 /* MAIN HEADING END */
